@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * Mikołaj postanowił w tym roku skorzystać z pomocy nowoczesnych technologii.
@@ -25,11 +26,20 @@ public class Day2_RandomPresent {
 
         Random random = new Random();
 
-        for (int i = 0; i < numberOfPresents; i++) {
-            int index = random.nextInt(list.size());
-            String present = list.get(index);
-            System.out.println(present);
-            list.remove(index);
-        }
+
+//
+//        for (int i = 0; i < numberOfPresents; i++) {
+//            int index = random.nextInt(list.size());
+//            String present = list.get(index);
+//            System.out.println(present);
+//            list.remove(index);
+//        }
+
+        List<String> listX = random.ints(0, ideas.size())
+                .distinct()
+                .limit(3)
+                .mapToObj(i -> ideas.get(i))
+                .collect(Collectors.toList());
+        System.out.println(listX);
     }
 }

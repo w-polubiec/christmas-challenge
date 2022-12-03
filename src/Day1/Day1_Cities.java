@@ -1,3 +1,5 @@
+package Day1;
+
 /**
  * Wyzwanie Świąteczne @wswieciekodu
  * Dzień 1

@@ -1,3 +1,5 @@
+package Day1;
+
 public class Point {
 
     private double x;

@@ -21,10 +21,10 @@ public class Day4_PresentToZeroOnes {
                 "Hat", "Tea", "Coffee", "Clock", "Bag",
                 "Book", "Wallet", "Cream", "Earrings");
 
-        ideas.forEach(Day4_PresentToZeroOnes::displayGiftsAsBinary);
+        ideas.forEach(Day4_PresentToZeroOnes::displayGiftAsBinary);
     }
 
-    private static void displayGiftsAsBinary(String idea) {
+    private static void displayGiftAsBinary(String idea) {
         System.out.print(idea + ": ");
         byte[] bytes = idea.getBytes(StandardCharsets.UTF_8);
         for (byte aByte : bytes) {

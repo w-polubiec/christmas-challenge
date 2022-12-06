@@ -21,7 +21,7 @@ public class Day5_SortAddresses {
         //TODO: sort addresses by city
 
         //System.out.println(addresses);
-        addresses.sort(Comparator.comparing(Address::getCity)); // addresses.sort((Address a1, Address a2) -> a1.getCity().compareTo(a2.getCity()));
+        addresses.sort(Comparator.comparing(Address::getCity));
         System.out.println(addresses);
     }
 

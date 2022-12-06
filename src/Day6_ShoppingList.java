@@ -20,20 +20,19 @@ public class Day6_ShoppingList {
     }
 
     private Map<String, Integer> prepareShoppingList(List<Recipe> recipes) {
+
         Map<String, Integer> shoppingList = new HashMap<>();
 
-        for (int i = 0; i < recipes.size(); i++) {
-            for (String ingredientKey : recipes.get(i).getIngredients().keySet()) {
-                Integer valueToAdd = recipes.get(i).getIngredients().get(ingredientKey);
-                if (!shoppingList.containsKey(ingredientKey)) {
-                    shoppingList.put(ingredientKey, valueToAdd);
+        recipes.forEach(recipe -> {
+            recipe.getIngredients().forEach((key, value) -> {
+                if (shoppingList.get(key) != null) {
+                    shoppingList.computeIfPresent(key, (k, v) -> v + value);
                 } else {
-                    int existingValue = shoppingList.get(ingredientKey);
-                    int summedValue = existingValue + valueToAdd;
-                    shoppingList.replace(ingredientKey, existingValue, summedValue);
+                    shoppingList.put(key, value);
                 }
-            }
-        }
+            });
+        });
+
         return shoppingList;
     }
 

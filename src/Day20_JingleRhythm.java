@@ -8,7 +8,7 @@ public class Day20_JingleRhythm {
      * Przykładowo 300ms * czas określony dla nuty w tablicy. Dla efektu dźwiękowego możesz też użyć beep!
      */
 
-    public static final int SOUND_CONSTANT = 200;
+    public static final int SOUND_CONSTANT_MILISECONDS = 200;
 
     public static void main(String[] args) {
 
@@ -26,7 +26,7 @@ public class Day20_JingleRhythm {
             Toolkit.getDefaultToolkit().beep();
             System.out.print("*");
             try {
-                Thread.sleep(SOUND_CONSTANT * tones[i]);
+                Thread.sleep(SOUND_CONSTANT_MILISECONDS * tones[i]);
                 System.out.print(" ");
             } catch (InterruptedException e) {
                 System.out.println(e);

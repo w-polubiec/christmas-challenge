@@ -33,7 +33,7 @@ public class Day23_ChristmasBow {
                     System.out.print(" ");
                 }
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 }
